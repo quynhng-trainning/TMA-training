@@ -1,0 +1,22 @@
+﻿<h3>Product List</h3>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Option</th>
+    </tr>
+    <template [ngIf]="products">
+        <tr *ngFor="let product of products">
+            <td>{{product._id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.status ? 'Active' : 'InActive'}}</td>
+            <td>
+                <a [routerLink]="['/edit', { id:product._id }]">Edit</a> | 
+                <a (click)="delete(product._id)">Delete</a>
+            </td>
+        </tr>
+    </template>
+</table>

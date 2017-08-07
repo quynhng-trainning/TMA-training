@@ -1,0 +1,10 @@
+﻿<h3>Add Product</h3>
+<form [formGroup]="productForm" (ngSubmit)="save($event)">
+    <input formControlName="name" placeholder="Name" type="text" required="required">
+    <br>
+    <input formControlName="price" placeholder="Price" type="number" required="required">
+    <br>
+    <input formControlName="status" type="checkbox">
+    <br>
+    <button type="submit">Save</button>
+</form>
